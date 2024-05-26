@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoListApp.Views.EditPage"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+             Shell.NavBarIsVisible="False"
+             Background="White">
+
+    <ScrollView>
+        <Grid
+            RowDefinitions="Auto, *"
+            Padding="25">
+
+            <!-- HEADER PART -->
+            <Grid
+                Grid.Row="0"
+                ColumnDefinitions="*, Auto"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand">
+                <Image
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    WidthRequest="22"
+                    HeightRequest="22">
+                    <Image.Source>
+                        <FontImageSource 
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static fa:Solid.ChevronLeft}" 
+                            Color="#1f66fc"/>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoBack_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    WidthRequest="24"
+                    HeightRequest="24">
+                    <Image.Source>
+                        <FontImageSource 
+                            FontFamily="FARegular" 
+                            Glyph="{x:Static fa:Solid.FloppyDisk}" 
+                            Color="#1f66fc" />
+                    </Image.Source>
+                </Image>
+            </Grid>
+
+            <!-- TO-DO LIST PART -->
+            <Border
+                Grid.Row="1"
+                Stroke="Transparent"
+                VerticalOptions="Start"
+                Background="Transparent">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"/>
+                </Border.StrokeShape>
+
+                <StackLayout>
+                    <!-- TO-DO LIST TITLE -->
+                    <VerticalStackLayout>
+                        <Label
+                            Text="Groceries"
+                            FontFamily="InterExtraBold"
+                            FontSize="30"
+                            TextColor="#0b9053"/>
+                        <Label
+                            Text="3 of 9 Tasks"
+                            FontFamily="InterMedium"
+                            FontSize="14"
+                            TextColor="#0b9053"/>
+                        <BoxView 
+                            StyleClass="Divider"
+                            Margin="0,20,0,0"
+                            Color="LightGray"
+                            VerticalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                    <!-- TO-DO LIST ITEMS -->
+                    <VerticalStackLayout Margin="0,15,0,0">
+                        <!-- FIRST ITEM -->
+                        <Grid 
+                            Margin="0,5"
+                            HorizontalOptions="Start">
+                            <material:CheckBox 
+                                Text="Avocados"
+                                IsChecked="False"
+                                Type="Regular"
+                                TextFontSize="14"
+                                TextColor="Black"
+                                BoxSizeRequest="20"
+                                BoxBackgroundColor="White"
+                                BorderColor="#0b9053"
+                                Color="#0b9053"
+                                FontFamily="InterRegular"
+                                VerticalOptions="Center"/>
+                            <BoxView 
+                                StyleClass="Divider"
+                                Margin="0"
+                                Color="#0b9053"
+                                VerticalOptions="Center"
+                                IsVisible="False"/>
+                        </Grid>
+
+                        <!-- SECOND ITEM -->
+                        <Grid 
+                            Margin="0,5"
+                            HorizontalOptions="Start">
+                            <material:CheckBox 
+                                Text="Onions"
+                                IsChecked="False"
+                                Type="Regular"
+                                TextFontSize="14"
+                                TextColor="Black"
+                                BoxSizeRequest="20"
+                                BoxBackgroundColor="White"
+                                BorderColor="#0b9053"
+                                Color="#0b9053"
+                                FontFamily="InterRegular"
+                                VerticalOptions="Center"/>
+                            <BoxView 
+                                StyleClass="Divider"
+                                Margin="0"
+                                Color="#0b9053"
+                                VerticalOptions="Center"
+                                IsVisible="False"/>
+                        </Grid>
+
+                        <!-- THIRD ITEM -->
+                        <Grid 
+                            Margin="0,5"
+                            HorizontalOptions="Start">
+                            <material:CheckBox 
+                                Text="Tomatoes"
+                                IsChecked="True"
+                                Type="Regular"
+                                TextFontSize="14"
+                                TextColor="#0b9053"
+                                BoxSizeRequest="20"
+                                BoxBackgroundColor="Transparent"
+                                BorderColor="Transparent"
+                                Color="Transparent"
+                                FontFamily="InterRegular"/>
+                            <BoxView 
+                                StyleClass="Divider"
+                                Margin="0"
+                                Color="#0b9053"
+                                VerticalOptions="Center"
+                                IsVisible="True"/>
+                        </Grid>
+
+                        <!-- FOURTH ITEM-->
+                        <Grid 
+                            Margin="0,5"
+                            HorizontalOptions="Start">
+                            <material:CheckBox
+                                Text="Green Leaves"
+                                IsChecked="True"
+                                Type="Regular"
+                                TextFontSize="14"
+                                TextColor="#0b9053"
+                                BoxSizeRequest="20"
+                                BoxBackgroundColor="Transparent"
+                                BorderColor="Transparent"
+                                Color="Transparent"
+                                FontFamily="InterRegular"/>
+                            <BoxView 
+                                StyleClass="Divider"
+                                Margin="0"
+                                Color="#0b9053"
+                                VerticalOptions="Center"
+                                IsVisible="True"/>
+                        </Grid>
+
+                        <!-- FIFTH ITEM -->
+                        <Grid 
+                            Margin="0,5"
+                            HorizontalOptions="Start">
+                            <material:CheckBox 
+                                Text="Bread"
+                                IsChecked="False"
+                                Type="Regular"
+                                TextFontSize="14"
+                                TextColor="Black"
+                                BoxSizeRequest="20"
+                                BoxBackgroundColor="White"
+                                BorderColor="#0b9053"
+                                Color="#0b9053"
+                                FontFamily="InterRegular"
+                                VerticalOptions="Center"/>
+                            <BoxView 
+                                StyleClass="Divider"
+                                Margin="0"
+                                Color="#0b9053"
+                                VerticalOptions="Center"
+                                IsVisible="False"/>
+                        </Grid>
+
+                        <!-- SIXTH ITEM -->
+                        <Grid 
+                            Margin="0,5"
+                            HorizontalOptions="Start">
+                            <material:CheckBox
+                                Text="Mushrooms"
+                                IsChecked="True"
+                                Type="Regular"
+                                TextFontSize="14"
+                                TextColor="#0b9053"
+                                BoxSizeRequest="20"
+                                BoxBackgroundColor="Transparent"
+                                BorderColor="Transparent"
+                                Color="Transparent"
+                                FontFamily="InterRegular"/>
+                            <BoxView 
+                                StyleClass="Divider"
+                                Margin="0"
+                                Color="#0b9053"
+                                VerticalOptions="Center"
+                                IsVisible="True"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+    
+</ContentPage>
